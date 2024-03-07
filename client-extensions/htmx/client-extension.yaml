@@ -1,0 +1,4 @@
+htmx:
+    name: HTMX
+    type: globalJS
+    url: https://unpkg.com/htmx.org@latest

@@ -1,0 +1,4 @@
+mustache:
+    name: Mustache
+    type: globalJS
+    url: https://unpkg.com/mustache@latest

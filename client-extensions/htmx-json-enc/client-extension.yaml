@@ -1,0 +1,4 @@
+htmx-json-enc:
+    name: HTMX json-enc
+    type: globalJS
+    url: https://unpkg.com/htmx.org/dist/ext/json-enc.js

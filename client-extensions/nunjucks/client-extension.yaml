@@ -1,0 +1,4 @@
+nunjucks:
+    name: Nunjucks
+    type: globalJS
+    url: https://unpkg.com/nunjucks@latest

@@ -1,0 +1,36 @@
+<div class="blogs-htmx-component"
+		 hx-ext="client-side-templates" 
+		 hx-get="/o/headless-delivery/v1.0/sites/${themeDisplay.getSiteGroupId()}/blog-postings"
+		 hx-trigger="load"
+		 hx-indicator="#indicator--${fragmentEntryLinkNamespace}"
+		 hx-swap="innerHTML"
+		 hx-target="#blogs--${fragmentEntryLinkNamespace}"
+		 nunjucks-template="blog-row--${fragmentEntryLinkNamespace}">
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Headline</th>
+				<th>Author</th>
+			</tr>
+		</thead>
+		<tbody id="blogs--${fragmentEntryLinkNamespace}">
+		</tbody>
+	</table>
+	
+	<template id="blog-row--${fragmentEntryLinkNamespace}">
+		{% for blog in items %}
+			<tr>
+				<td>{{ blog.id }}</td>
+				<td>{{ blog.headline }}</td>
+				<td>{{ blog.creator.name }}</td>
+			</tr>
+		{% endfor %}
+	</template>
+	
+	<span id="indicator--${fragmentEntryLinkNamespace}"
+				class="htmx-indicator loading-animation loading-animation-secondary loading-animation-sm"
+				aria-hidden="true">
+	</span>
+</div>

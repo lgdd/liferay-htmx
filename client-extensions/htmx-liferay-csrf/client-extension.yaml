@@ -1,0 +1,7 @@
+assemble:
+    - from: assets
+      into: static
+htmx-liferay-csrf:
+    name: HTMX Liferay CSRF
+    type: globalJS
+    url: htmx-liferay-csrf.js

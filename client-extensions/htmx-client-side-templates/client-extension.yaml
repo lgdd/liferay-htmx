@@ -1,0 +1,4 @@
+htmx-client-side-templates:
+    name: HTMX client-side-templates
+    type: globalJS
+    url: https://unpkg.com/htmx.org/dist/ext/client-side-templates.js

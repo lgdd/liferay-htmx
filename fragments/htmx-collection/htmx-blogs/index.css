@@ -1,0 +1,15 @@
+.blogs-htmx-component .htmx-request .table {
+	display: none;
+}
+
+.blogs-htmx-component .htmx-indicator {
+    display: none;
+}
+
+.blogs-htmx-component .htmx-request .htmx-indicator {
+    display: block;
+}
+
+.blogs-htmx-component .htmx-request.htmx-indicator {
+    display: block;
+}

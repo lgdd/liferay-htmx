@@ -1,0 +1,32 @@
+allprojects {
+    group = 'com.github.lgdd.liferay.htmx'
+}
+
+def gitignoreToList(File f) {
+  def ignores = []
+  f.eachLine { line ->
+      if (!line.startsWith('#') && !line.isEmpty()) {
+       ignores.add(line)
+    }
+  }
+  return ignores
+}
+
+task zipFragmentCollections(type: Zip) {
+    def dirsToZip = []
+    fileTree(dir: '.').matching {
+        include "**/collection.json"
+    }.each { File file ->
+        dirsToZip << file.parentFile
+    }
+
+    dirsToZip.each { dir ->
+        from(dir)
+        include '**/*'
+        exclude gitignoreToList(file('.gitignore'))
+        archiveFileName = "${dir.name}.zip"
+        destinationDirectory = file('build')    
+    }
+}
+
+build.finalizedBy zipFragmentCollections
